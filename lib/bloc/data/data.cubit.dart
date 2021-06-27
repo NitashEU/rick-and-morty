@@ -10,9 +10,11 @@ class DataCubit extends Cubit<DataState> {
   void init() async {
     final characters = await repository.getAllCharacters();
     final locations = await repository.getAllLocations();
+    final episodes = await repository.getAllEpisodes();
     emit(state.copyWith(
       characters: characters,
       locations: locations,
+      episodes: episodes,
     ));
   }
 }
