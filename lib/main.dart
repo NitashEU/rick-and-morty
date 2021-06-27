@@ -1,31 +1,31 @@
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:rick_and_morty/app.view.dart';
+import 'package:rick_and_morty/bloc/data/data.cubit.dart';
+import 'package:rick_and_morty/repositories/data.repository.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        title: 'Rick and Morty Explorer',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        initialRoute: '/splash',
-        getPages: [],
-        builder: (context, child) {
-          return BlocListener<DataCubit, DataState>(listener: (context, state) {
-            switch (state.type) {
-              case DataType.LOADING:
-                EasyDebounce.debounce(
-                  'debounce-data',
-                  Duration(milliseconds: 500),
-                  () async => await Get.offAllNamed('/splash'),
-                );
-            }
-          });
-        });
+    final dataRepository = DataRepository();
+
+    final dataCubit = DataCubit();
+
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider.value(value: dataRepository),
+      ],
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider.value(value: dataCubit),
+        ],
+        child: AppView(),
+      ),
+    );
   }
 }
