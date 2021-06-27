@@ -9,24 +9,32 @@ class DataState {
     this.characters,
     this.locations,
     this.episodes,
+    this.quotes,
+    this.loadingQuote,
   });
 
   final DataStateType type;
   final List<Character> characters;
   final List<LocationExtended> locations;
   final List<Episode> episodes;
+  final List<String> quotes;
+  final String loadingQuote;
 
   DataState copyWith({
     DataStateType type,
     List<Character> characters,
     List<LocationExtended> locations,
     List<Episode> episodes,
+    List<String> quotes,
+    String loadingQuote,
   }) {
     return DataState(
       type: type ?? this.type,
       characters: characters ?? this.characters,
       locations: locations ?? this.locations,
       episodes: episodes ?? this.episodes,
+      quotes: quotes ?? this.quotes,
+      loadingQuote: loadingQuote ?? this.loadingQuote,
     );
   }
 }
