@@ -1,6 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/screens/root/characters.screen.dart';
+import 'package:rick_and_morty/screens/root/coming-soon.widget.dart';
 
 class RootScreen extends StatefulWidget {
   @override
@@ -55,12 +56,8 @@ class _RootScreen extends State<RootScreen> {
           },
           children: [
             CharactersScreen(),
-            Container(
-              child: Text('LOCATIONS'),
-            ),
-            Container(
-              child: Text('EPISODES'),
-            ),
+            ComingSoonWidget(false),
+            ComingSoonWidget(false),
           ],
         ),
       ),
