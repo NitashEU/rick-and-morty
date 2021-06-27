@@ -1,7 +1,7 @@
 class Episode {
   int id;
   String name;
-  DateTime airDate;
+  String airDate;
   String episode;
   List<String> characters;
   String url;
@@ -20,7 +20,7 @@ class Episode {
   Episode.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
-    airDate = DateTime.parse(json['air_date']);
+    airDate = json['air_date'];
     episode = json['episode'];
     characters = json['characters'].cast<String>().toList();
     url = json['url'];
