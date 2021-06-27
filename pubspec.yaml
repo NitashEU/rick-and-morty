@@ -13,6 +13,7 @@ dependencies:
   flutter_bloc: ^7.0.1
   flutter_easyloading: ^3.0.0
   get: ^4.1.4
+  lottie: ^1.0.1
 
 dev_dependencies:
   flutter_test:
