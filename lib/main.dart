@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     final dataRepository = DataRepository();
 
-    final dataCubit = DataCubit();
+    final dataCubit = DataCubit(dataRepository)..init();
 
     return MultiRepositoryProvider(
       providers: [
