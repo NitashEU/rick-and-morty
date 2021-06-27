@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/screens/root/characters.screen.dart';
 
 class RootScreen extends StatefulWidget {
   @override
@@ -53,9 +54,7 @@ class _RootScreen extends State<RootScreen> {
             setState(() => _currentIndex = i);
           },
           children: [
-            Container(
-              child: Text('CHARACTERS'),
-            ),
+            CharactersScreen(),
             Container(
               child: Text('LOCATIONS'),
             ),
