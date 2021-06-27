@@ -7,11 +7,15 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  animations: ^2.0.0
+  bottom_navy_bar: ^6.0.0
+  cached_network_image: ^3.0.0
   easy_debounce: ^2.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.0.1
   flutter_easyloading: ^3.0.0
+  font_awesome_flutter: ^9.1.0
   get: ^4.1.4
   lottie: ^1.0.1
 
